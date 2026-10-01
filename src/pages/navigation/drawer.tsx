@@ -8,7 +8,6 @@ import SecondPage from '../count/secordPage'
 export default function Drawer(){
     return (
         <div>
-            {/* test1221 */}
             {/* <main className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-24 space-y-16 pt-8'> */}
             {/* <main className='mx-auto px-4 sm:px-6 lg:px-12 pb-24 space-y-16 pt-8'> */}
             <main className=''>
