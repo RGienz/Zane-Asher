@@ -21,7 +21,7 @@ export default function ThirdPage() {
                     <span 
                         className='text-3xl font-serif text-indigo-400 tracking-[0.1em]'
                         style={{fontFamily : "'Henny Penny', cursive"}}>
-                        Location
+                        Location1
                     </span>
                 </div>
 
