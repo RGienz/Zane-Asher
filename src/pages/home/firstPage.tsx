@@ -23,21 +23,6 @@ export default function FrontPage() {
                 </div>
             </div>
 
-            {/* Title: Zane Asher */}
-            {/* <div className="absolute top-[62%] left-1/2 -translate-x-1/2 z-25 py-1 px-4 w-11/12 max-w-sm flex items-center justify-center">
-                <h1 
-                    className="text-3xl min-[380px]:text-6xl sm:text-6xl text-[#ffeace] font-normal tracking-wide text-center" 
-                    style={{ 
-                        // fontFamily: "'Henny Penny', cursive",
-                        fontFamily: "'Atma', cursive",
-                        WebkitTextStroke: "2px #9B642F", 
-                        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)" 
-                    }}
-                >
-                    Zane Asher
-                </h1>
-            </div> */}
-
             <div className="absolute top-[61%] left-1/2 -translate-x-1/2 z-25 py-1 px-4 w-11/12 max-w-sm flex items-center justify-center">
                 <h1 
                     className="text-3xl min-[380px]:text-6xl sm:text-6xl text-[#ffeace] font-normal tracking-wide text-center" 
