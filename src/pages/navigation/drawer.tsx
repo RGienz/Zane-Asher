@@ -6,36 +6,7 @@ import ThirdPage from '../location/thirdpages'
 // import SixPage from '../rsvp/invitation'
 
 export default function Drawer(){
-    // return (
-    //     <div>
-    //         {/* <h1>NAVIGATION</h1> */}
 
-    //         {/* <main className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-24 space-y-16 pt-8'> */}
-    //         {/* <main className='mx-auto px-4 sm:px-6 lg:px-12 pb-24 space-y-16 pt-8'> */}
-    //         <main className=''>
-    //             {/* <section className='scroll-mt-24'> */}
-    //             <section >
-    //                 <FirstPage/>
-    //             </section>
-    //             {/* <section >
-    //                 <SecondPage/>
-    //             </section> */}
-    //             <section >
-    //                 <ThirdPage/>
-    //             </section>
-    //             {/* <section >
-    //                 <FourthPage/>
-    //             </section> */}
-    //             {/* <section >
-    //                 <FithPage/>
-    //             </section> */}
-    //             {/* <section >
-    //                 <SixPage/>
-    //             </section> */}
-               
-    //         </main>
-    //     </div>
-    // )
 
     return (
         <div className="bg-neutral-900 min-h-screen w-full flex justify-center">
