@@ -1,9 +1,9 @@
 import FirstPage from '../home/firstPage'
-// import SecondPage from '../count/secordPage'
+import SecondPage from '../count/secordPage'
 import ThirdPage from '../location/thirdpages'
-// import FourthPage from '../about/info'
-// import FithPage from '../guest/guest_list'
-// import SixPage from '../rsvp/invitation'
+import FourthPage from '../about/info'
+import FithPage from '../guest/guest_list'
+import SixPage from '../rsvp/invitation'
 
 export default function Drawer(){
 
@@ -14,21 +14,21 @@ export default function Drawer(){
                 <section>
                     <FirstPage/>
                 </section>
-                {/* <section>
+                <section>
                     <SecondPage/>
-                </section> */}
+                </section>
                 <section>
                     <ThirdPage/>
                 </section>
-                {/* <section>
+                <section>
                     <FourthPage/>
-                </section> */}
-                {/* <section>
+                </section>
+                <section>
                     <FithPage/>
-                </section> */}
-                {/* <section>
+                </section>
+                <section>
                     <SixPage/>
-                </section> */}
+                </section>
             </main>
         </div>
     )
