@@ -23,12 +23,12 @@ export default function Drawer(){
                 <section>
                     <FourthPage/>
                 </section>
-                <section>
+                {/* <section>
                     <FithPage/>
                 </section>
                 <section>
                     <SixPage/>
-                </section>
+                </section> */}
             </main>
         </div>
     )
