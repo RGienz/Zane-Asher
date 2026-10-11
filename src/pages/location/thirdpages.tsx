@@ -24,7 +24,7 @@ export default function ThirdPage() {
         </button>
       </div>
 
-      <div className="absolute top-[65%] left-1/2 -translate-x-1/2 z-20 flex flex-col items-center justify-center text-center w-[75%] text-[#4A3B22]">
+      <div className="absolute top-[65%] right-[6%] z-20 flex flex-col items-center justify-center text-center w-[42%] text-[#4A3B22]">
         <h2 className="text-xs sm:text-sm font-semibold tracking-wider uppercase leading-tight drop-shadow-sm">
           {LOCATIONS.reception.name}
         </h2>
