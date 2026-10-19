@@ -1,5 +1,5 @@
 // firstPage.tsx
-import path_image_06 from '../../assets/image/1_page.png'
+import path_image_06 from '../../assets/image/1_page_2.gif'
 import { useFontStyle } from './font.condition'
 
 export default function FrontPage() {
