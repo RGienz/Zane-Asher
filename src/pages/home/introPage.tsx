@@ -1,5 +1,5 @@
 // intoPage.tsx
-import path_image_06 from '../../assets/image/introduction.gif'
+import path_image_06 from '../../assets/image/introDuction_1.gif'
 
 interface IntroPageProps {
   onOpen?: () => void
@@ -18,7 +18,7 @@ export default function IntroPage({ onOpen }: IntroPageProps) {
       <button
         onClick={onOpen}
         aria-label="Open Invitation"
-        className="absolute top-[68%] left-1/2 -translate-x-1/2 w-16 h-16 rounded-full z-20 cursor-pointer active:scale-90 transition-transform duration-150 focus:outline-none"
+        className="absolute top-[62%] left-[50%] -translate-x-1/2 w-30 h-30 rounded-full z-20 cursor-pointer active:scale-90 transition-transform duration-150 focus:outline-none "
       />
     </div>
   )
