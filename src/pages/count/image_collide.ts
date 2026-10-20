@@ -1,24 +1,29 @@
 import { useState, useEffect } from 'react'
-import path_image_06 from '../../assets/image/1087287129.webp'
+// import path_image_06 from '../../assets/image/1087287129.webp'
+import path_image_slide_6 from '../../assets/image/slide_7.jpeg'
+import path_image_slide_7 from '../../assets/image/slide_7.jpeg'
+import path_image_slide_8 from '../../assets/image/slide_8.jpeg'
 
 export interface imageFace {
     url : string
     caption : string
 }
 
+
+
 export function useCollideImage(){
     // const collagePhotos  = [
     const collagePhotos: imageFace[] = [
         {
-            url: path_image_06,
+            url: path_image_slide_6,
             caption: "The Journey Begins 🌿"
         },
         {
-            url: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=500&auto=format&fit=crop&q=60",
+            url: path_image_slide_7,
             caption: "Tiny Shoes, Big Adventures 🤍"
         },
         {
-            url: "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500&auto=format&fit=crop&q=60",
+            url: path_image_slide_8,
             caption: "Counting Down the Days 🧭"
         }
     ]

@@ -1,9 +1,11 @@
-import path_image_06 from '../../assets/image/1087287129.webp'
+// secondPage.tsx
+import path_image_06 from '../../assets/image/2ndPage_3.gif'
 import { useCountTime } from './timer_count'
 import { usePlayBackgroundMusic } from './music_play'
 import path_music_note from '../../assets/image/nota1.gif'
 import { useCollideImage } from './image_collide'
 import frame_1 from '../../assets/image/frame_1.png'
+import BackGroundMusic from '../../assets/music/Jungle Safari Dance Song.mp3'
 
 export default function TimerCount() {
     const { timeLeft, formatTime } = useCountTime()
@@ -17,23 +19,25 @@ export default function TimerCount() {
     } = useCollideImage()
 
     return (
-        <div className="relative min-h-screen flex flex-col items-center justify-start overflow-hidden p-4 sm:p-8 selection:bg-amber-100">
+        <div className="relative w-full min-h-screen flex flex-col items-center justify-start overflow-x-hidden p-4 sm:p-8 selection:bg-amber-100 bg-[#EBF4E9]">
             
-            {/* Background Image */}
+            {/* Background Image: Locks width to 100% and stretches height to fit the full section */}
             <div 
-                className="absolute inset-0 bg-cover bg-center pointer-events-none w-full h-full"
+                className="absolute inset-0 w-full h-full bg-[length:100%_100%] bg-no-repeat bg-top pointer-events-none"
                 style={{ backgroundImage: `url(${path_image_06})` }}
             />
 
             <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-md w-full mx-auto space-y-6 py-6">
 
                 {/* Header Title */}
-                <div className="space-y-1 text-[#4A5538]">
+                <div className="space-y-1 text-[#4A5538] flex flex-col items-center">
                     <div 
-                        className="text-3xl sm:text-4xl tracking-[0.1em] drop-shadow-sm" 
+                        className="text-3xl sm:text-4xl tracking-[0.1em] drop-shadow-sm flex justify-center w-full" 
                         style={{ fontFamily: "'Henny Penny', cursive" }}
                     >
-                        the
+                        <div className="border bg-white w-20 flex items-center justify-center">
+                            <span>the</span>
+                        </div>
                     </div>
                     <div className="uppercase tracking-[0.25em] font-semibold text-[#5A6842] bg-white/80 backdrop-blur-sm px-6 py-3 border border-stone-300/80 rounded-lg text-2xl sm:text-3xl shadow-sm">
                         <span>CountDown</span>
@@ -62,9 +66,14 @@ export default function TimerCount() {
 
                 {/* Audio Player */}
                 <div className="w-full">
-                    <audio
+                    {/* <audio
                         ref={audioRef}
                         src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+                        loop
+                    /> */}
+                    <audio
+                        ref={audioRef}
+                        src={BackGroundMusic}
                         loop
                     />
 
@@ -148,11 +157,11 @@ export default function TimerCount() {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >
-                    <div className="absolute inset-x-[12%] top-[10%] bottom-[12%] overflow-hidden rounded-sm z-0 flex items-center justify-center bg-stone-100">
+                    <div className="absolute inset-x-[12%] top-[10%] bottom-[12%] left-[36%] overflow-hidden rounded-sm z-0 flex items-center justify-center bg-stone-100">
                         <img 
                             src={collagePhotos[currentPhotoIndex].url} 
                             alt={collagePhotos[currentPhotoIndex].caption || "Slideshow preview"} 
-                            className="w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+                            className="w-full h-full object-cover transition-opacity duration-700 ease-in-out bg-shite"
                         />
                     </div>
 

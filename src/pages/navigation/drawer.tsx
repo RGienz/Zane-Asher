@@ -3,8 +3,8 @@ import { useState } from 'react'
 import FirstPage from '../home/firstPage'
 import SecondPage from '../count/secordPage'
 import ThirdPage from '../location/thirdpages'
-import FourthPage from '../about/info'
-import FithPage from '../guest/guest_list'
+import FourthPage from '../about/fourthPage'
+import FithPage from '../collide/FivePage'
 import SixPage from '../rsvp/invitation'
 import IntroPage from '../home/introPage'
 
@@ -43,18 +43,18 @@ export default function Drawer() {
             <section>
               <SecondPage />
             </section>
-            {/* <section>
+            <section>
               <ThirdPage />
-            </section> */}
-            {/* <section>
+            </section>
+            <section>
               <FourthPage />
-            </section> */}
-            {/* <section>
+            </section>
+            <section>
               <FithPage />
-            </section> */}
-            {/* <section>
+            </section>
+            <section>
               <SixPage />
-            </section> */}
+            </section>
           </div>
         )}
       </main>
