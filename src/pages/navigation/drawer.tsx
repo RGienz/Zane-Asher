@@ -1,12 +1,14 @@
 // drawer.tsx
 import { useState } from 'react'
-import FirstPage from '../home/firstPage'
-import SecondPage from '../count/secordPage'
-import ThirdPage from '../location/thirdpages'
-import FourthPage from '../about/fourthPage'
-import FithPage from '../collide/FivePage'
-import SixPage from '../rsvp/invitation'
-import IntroPage from '../home/introPage'
+import FirstPage from '../One/firstPage'
+import SecondPage from '../Two/secordPage'
+import ThirdPage from '../Three/thirdpages'
+import FourthPage from '../Four/fourthPage'
+import FithPage from '../Five/FivePage'
+import SixPage from '../Six_rsvp/invitation'
+import IntroPage from '../One/introPage'
+import GiftIde from '../Four/gift_idea'
+import Seven from '../grandparents/sevenPage'
 
 export default function Drawer() {
   const [isOpen, setIsOpen] = useState(false)      // Controls whether full content is mounted
@@ -43,11 +45,18 @@ export default function Drawer() {
             <section>
               <SecondPage />
             </section>
+        
             <section>
               <ThirdPage />
             </section>
             <section>
+              <GiftIde />
+            </section>
+            <section>
               <FourthPage />
+            </section>
+            <section>
+              <Seven />
             </section>
             <section>
               <FithPage />

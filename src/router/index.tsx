@@ -1,13 +1,13 @@
 // index.tsx
 import { createBrowserRouter, type RouteObject } from 'react-router-dom'; 
 import Drawer from '../pages/navigation/drawer'
-import FirstPage from '../pages/home/firstPage'
-import SecondPage from '../pages/count/secordPage'
-import ThirdPage from '../pages/location/thirdpages'
-import FourthPage from '../pages/about/fourthPage'
-import FithPage from '../pages/collide/FivePage'
-import SixPage from '../pages/rsvp/invitation'
-import GuestList from '../pages/guest/guestList' // Capitalized component name
+import FirstPage from '../pages/One/firstPage'
+import SecondPage from '../pages/Two/secordPage'
+import ThirdPage from '../pages/Three/thirdpages'
+import FourthPage from '../pages/Four/fourthPage'
+import FithPage from '../pages/Five/FivePage'
+import SixPage from '../pages/Six_rsvp/invitation'
+import GuestList from '../pages/guest/guestList' 
 
 const routes: RouteObject[] = [
   {
@@ -41,7 +41,6 @@ const routes: RouteObject[] = [
     ],
   },
   {
-    // Match whatever URL path you want to use here (e.g., 'guest-list' or 'guest_list')
     path: 'guest_list', 
     element: <GuestList />, // Capitalized JSX tag
   }
