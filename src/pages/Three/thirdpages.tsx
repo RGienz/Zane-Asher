@@ -1,6 +1,6 @@
-import path_image_06 from '../../assets/image/3rdPage_2.jpg'
+import path_image_06 from '../../assets/image/3rdPage_3.jpg'
 import { useFontStyle } from './font.condition'
-// import { LOCATIONS, handleOpenMap } from './location.condition'
+import { LOCATIONS, handleOpenMap } from './location.condition'
 
 export default function ThirdPage() {
   useFontStyle()
@@ -53,6 +53,15 @@ export default function ThirdPage() {
                 View 
               </button>
             </div> */}
+            <div className="absolute top-[90%] right-[45%] z-20 flex flex-col items-center justify-end text-center w-[42%] text-[#4A3B22]">
+          
+              <button
+                onClick={() => handleOpenMap(LOCATIONS.church.mapUrl)}
+                className="mt-2 px-3 py-1 text-[14px] sm:text-xs font-medium bg-[#6A5532] hover:bg-[#6A5532] text-white border border-[#8B7355]/60 rounded-full backdrop-blur-sm transition-all active:scale-95 shadow-sm cursor-pointer"
+              >
+                View Map 
+              </button>
+            </div>
       </div>
   )
 }
