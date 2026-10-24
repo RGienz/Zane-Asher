@@ -1,4 +1,4 @@
-import path_image_06 from '../../assets/image/gi_3.png'
+import path_image_06 from '../../assets/image/gi_4.jpg'
 import { useFontStyle } from './font.condition'
 
 export default function FrontPage() {

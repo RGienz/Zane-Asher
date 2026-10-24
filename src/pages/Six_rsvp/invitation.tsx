@@ -1,4 +1,3 @@
-// sixPage.tsx
 import { useState } from 'react'
 import path_image_bg from '../../assets/image/2ndPage_2.gif'
 import { useFontStyle } from './font.condition'
@@ -11,15 +10,14 @@ export default function RSVPPage() {
 
     const [fullName, setFullName] = useState('')
     const [attending, setAttending] = useState<string>('')
-    const [guestCount, setGuestCount] = useState('')
+    const [adultsCount, setAdultsCount] = useState('1')
+    const [childrenCount, setChildrenCount] = useState('0')
     const [reason, setReason] = useState('')
     const [submitting, setSubmitting] = useState(false)
     const [submitted, setSubmitted] = useState(false)
 
     // Helper function to allow only letters, numbers, spaces, and dots (.)
     const handleFilteredChange = (value: string, setter: (val: string) => void) => {
-        // Regex allows: a-z, A-Z, 0-9, spaces, and dots (\.)
-        // Modify or remove ^ if you also want to support international accents (e.g., Ñ, é)
         const sanitizedValue = value.replace(/[^a-zA-Z0-9.\s]/g, '')
         setter(sanitizedValue)
     }
@@ -30,12 +28,18 @@ export default function RSVPPage() {
 
         setSubmitting(true)
 
+        const parsedAdults = parseInt(adultsCount) || 1
+        const parsedChildren = parseInt(childrenCount) || 0
+        const totalGuests = parsedAdults + parsedChildren
+
         try {
             // Save RSVP data to Firestore collection named 'rsvps'
             await addDoc(collection(db, 'rsvps'), {
                 fullName: fullName.trim(),
                 attendance: attending, // 'yes' or 'no'
-                guestCount: attending === 'yes' ? parseInt(guestCount) || 1 : 0,
+                adults: attending === 'yes' ? parsedAdults : 0,
+                children: attending === 'yes' ? parsedChildren : 0,
+                guestCount: attending === 'yes' ? totalGuests : 0,
                 reason: attending === 'no' ? reason.trim() : '',
                 timestamp: serverTimestamp()
             })
@@ -63,7 +67,7 @@ export default function RSVPPage() {
                 
                 {/* Header Message */}
                 <div className="space-y-2 text-center px-2">
-                    <div className="border border-stone-400 rounded bg-white rounded p-3">
+                    <div className="border border-stone-400 rounded bg-white p-3">
                         <h2 
                             className="text-3xl sm:text-4xl text-[#4A3525] font-semibold leading-tight drop-shadow-sm"
                             style={{ fontFamily: "'Henny Penny', cursive" }}
@@ -71,18 +75,15 @@ export default function RSVPPage() {
                             A spot has been saved for you on our jungle adventure!
                         </h2>
                     </div>
-                    <div className="border border-stone-400 rounded bg-white rounded p-2 ">
-                        <h2 
-                            className="text-xs font-semibold text-[#4A5538] leading-relaxed uppercase tracking-wide"
-                            
-                        >
-                           Kindly Fill OUT the RSVP Form below to confirm your attendance on or before
+                    <div className="border border-stone-400 rounded bg-white p-2">
+                        <h2 className="text-xs font-semibold text-[#4A5538] leading-relaxed uppercase tracking-wide">
+                            Kindly Fill OUT the RSVP Form below to confirm your attendance on or before
                         </h2>
                     </div>
 
                     <div className='p-2 mt-5 tracking-[0.2em] font-semibold border-b border-stone-400'>
                         <h2 
-                            className="text-3xl  sm:text-4xl text-[#4A3525] font-semibold leading-tight drop-shadow-sm"
+                            className="text-3xl sm:text-4xl text-[#4A3525] font-semibold leading-tight drop-shadow-sm"
                             style={{ fontFamily: "'Henny Penny', cursive" }}
                         >
                             October 27, 2026
@@ -94,7 +95,7 @@ export default function RSVPPage() {
                 {/* Embedded Form Card */}
                 <div className="w-full bg-white rounded-2xl border-t-8 border-t-[#5A6842] border border-stone-200 shadow-md text-left p-5 space-y-5">
                     
-                    <div className="  bg-white rounded p-3 text-center">
+                    <div className="bg-white rounded p-3 text-center">
                         <h2 
                             className="text-[18px] sm:text-4xl text-[#4A3525] border-b border-stone-400 py-2 font-semibold leading-tight drop-shadow-sm tracking-[0.2em]"
                             style={{ fontFamily: "'Henny Penny', cursive" }}
@@ -157,21 +158,35 @@ export default function RSVPPage() {
                                 </div>
                             </div>
 
-                            {/* Conditional Field: Guest Count if attending */}
+                            {/* Conditional Fields: Adults & Children if attending */}
                             {attending === 'yes' && (
-                                <div className="space-y-2 pt-2 animate-fadeIn">
-                                    <label className="block text-sm font-semibold text-stone-800">
-                                        Number of Guests Attending
-                                    </label>
-                                    <input 
-                                        type="number"
-                                        min="1"
-                                        max="10"
-                                        value={guestCount}
-                                        onChange={(e) => setGuestCount(e.target.value)}
-                                        placeholder="Iyong sagot"
-                                        className="w-full text-sm p-2 border-b-2 border-stone-300 focus:border-[#5A6842] outline-none transition bg-stone-50/50"
-                                    />
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 animate-fadeIn">
+                                    <div className="space-y-2">
+                                        <label className="block text-xs sm:text-sm font-semibold text-stone-800">
+                                            Adults (18+ yrs)
+                                        </label>
+                                        <input 
+                                            type="number"
+                                            min="1"
+                                            max="10"
+                                            value={adultsCount}
+                                            onChange={(e) => setAdultsCount(e.target.value)}
+                                            className="w-full text-sm p-2 border-b-2 border-stone-300 focus:border-[#5A6842] outline-none transition bg-stone-50/50"
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="block text-xs sm:text-sm font-semibold text-stone-800">
+                                            Children
+                                        </label>
+                                        <input 
+                                            type="number"
+                                            min="0"
+                                            max="10"
+                                            value={childrenCount}
+                                            onChange={(e) => setChildrenCount(e.target.value)}
+                                            className="w-full text-sm p-2 border-b-2 border-stone-300 focus:border-[#5A6842] outline-none transition bg-stone-50/50"
+                                        />
+                                    </div>
                                 </div>
                             )}
 
