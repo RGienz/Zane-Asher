@@ -53,7 +53,7 @@ export default function ThirdPage() {
                 View 
               </button>
             </div> */}
-            <div className="absolute top-[90%] right-[45%] z-20 flex flex-col items-center justify-end text-center w-[42%] text-[#4A3B22]">
+            <div className="absolute top-[20%] right-[8%] z-20 flex flex-col items-center justify-end text-center w-[42%] text-[#4A3B22]">
           
               <button
                 onClick={() => handleOpenMap(LOCATIONS.church.mapUrl)}

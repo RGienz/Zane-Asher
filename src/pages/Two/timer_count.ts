@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 
 export function useCountTime(){
-    const targetDate = new Date('2026-10-30T10:30:00').getTime()
+    // 14:00:00 represents 2:00 PM in 24-hour format
+    const targetDate = new Date('2026-10-31T14:00:00').getTime()
 
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
@@ -42,8 +43,6 @@ export function useCountTime(){
         }
     }, [])
 
-
-
     const formatTime = (num: number) => String(num).padStart(2, '0')
 
     return {
@@ -52,7 +51,3 @@ export function useCountTime(){
         formatTime
     }
 }
-
-
-
-

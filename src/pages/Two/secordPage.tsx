@@ -39,13 +39,15 @@ export default function TimerCount() {
                             <span>the</span>
                         </div>
                     </div>
-                    <div className="uppercase tracking-[0.25em] font-semibold text-[#5A6842] bg-white/80 backdrop-blur-sm px-6 py-3 border border-stone-300/80 rounded-lg text-2xl sm:text-3xl shadow-sm">
+                    <div className="uppercase tracking-[0.25em] font-semibold text-[#5A6842] bg-white/80 backdrop-blur-sm px-6 py-3 border border-stone-300/80 rounded-lg text-2xl sm:text-3xl ">
                         <span>CountDown</span>
                     </div>
                 </div>
 
+             
+
                 {/* Countdown Grid */}
-                <div className="grid grid-cols-4 gap-2 text-[#5A6842] font-serif w-full px-3 py-4 bg-white/80 backdrop-blur-sm rounded-2xl border border-stone-300/80 shadow-sm">
+                <div className="grid grid-cols-4 gap-2 text-[#5A6842] font-serif w-full px-3 py-4 bg-white/80 backdrop-blur-sm rounded-2xl border border-stone-300/80  ">
                     <div className="flex flex-col items-center">
                         <span className="text-2xl sm:text-4xl font-bold tracking-tight">{formatTime(timeLeft.days)}</span>
                         <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#7C725D] mt-1 font-sans">Days</span>
@@ -62,6 +64,25 @@ export default function TimerCount() {
                         <span className="text-2xl sm:text-4xl font-bold tracking-tight">{formatTime(timeLeft.seconds)}</span>
                         <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#7C725D] mt-1 font-sans">Seconds</span>
                     </div>
+                </div>
+
+                <div className="border-b p-3 w-full border-stone-300/80">
+                    <div >
+                        <span className="uppercase tracking-[0.2em] font-semibold text-[#5A6842] bg-white/80 backdrop-blur-sm px-6 py-2 border border-stone-300/80 rounded-lg text-1xl sm:text-2xl shadow-sm">Event Date</span>
+                    </div>
+                   <div className="uppercase tracking-[0.25em] font-semibold text-[#5A6842] bg-white/80 backdrop-blur-sm px-6 py-3 border border-stone-300/80 rounded-lg text-2xl sm:text-3xl shadow-sm mt-2">
+                        <span>OCT 31, 2026</span>
+                    </div>
+
+                </div>
+                <div className="border-b p-3 w-full border-stone-300/80">
+                    <div >
+                        <span className="uppercase tracking-[0.2em] font-semibold text-[#5A6842] bg-white/80 backdrop-blur-sm px-6 py-2 border border-stone-300/80 rounded-lg text-1xl sm:text-2xl shadow-sm">Time At</span>
+                    </div>
+                   <div className="uppercase tracking-[0.25em] font-semibold text-[#5A6842] bg-white/80 backdrop-blur-sm px-6 py-3 border border-stone-300/80 rounded-lg text-2xl sm:text-3xl shadow-sm mt-2">
+                        <span>02:00 PM</span>
+                    </div>
+
                 </div>
 
                 {/* Audio Player */}
